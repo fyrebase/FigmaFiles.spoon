@@ -1,39 +1,84 @@
 <img src="./figma-files.webp" alt="Global Figma File Launcher">
 
-# FigmaFiles.spoon
+# Figma Files
 
-Unlock instant access to your Figma files with a single shortcut from anywhere on your Mac. No more digging through teams and projects. Whether you're a designer or developer, streamline your workflow and jump into your Figma files effortlessly.
+FigmaFiles Spoon for HammerSpoon is a game-changer for Mac users, especially designers and developers. This innovative tool enables you to open Figma files from anywhere in your system with just a shortcut. Say goodbye to the hassle of navigating through teams and projects. Let's dive into how you can install and set up this nifty tool to streamline your workflow.
 
-## Installing Spoon
+> [!IMPORTANT]
+> Figma Files is provided as is. It is currently beta, but is functioning well enough for my needs. Please report any issues you may be experiencing and I willdo my best to resolve.
 
-The easiest way to install the Text Transform spoon:
+## Installing FigmaFiles Spoon for HammerSpoon
 
-```
-mkdir -p ~/.hammerspoon/Spoons
-git clone git@github.com:fyrebase/FigmaFiles.spoon.git ~/.hammerspoon/Spoons/FigmaFiles.spoon
-```
+### 1. **Creating the Necessary Directory**
 
-## Init Spoon
+- Open your Terminal on your Mac.
+- Create the required directory for HammerSpoon Spoons
 
-```
-hs.loadSpoon("FigmaFiles")
+     ```
+     mkdir -p ~/.hammerspoon/Spoons
+     ```
 
-spoon.FigmaFiles.apiKey = "[YOUR_FIGMA_API_KEY]"
-spoon.FigmaFiles.teamIds = {[TEAM_ID],[ANOTHER_TEAM_ID]}
-spoon.FigmaFiles.darkMode = true
-spoon.FigmaFiles.autoUpdate = true
-spoon.FigmaFiles.updateCacheInterval = 60*60*3 -- 3 Hours
+### 2. **Cloning the Figma Files Spoon Repository**
 
-spoon.FigmaFiles:start()
-spoon.FigmaFiles:bindHotKeys({
-    showFigmaFilesChooser = {hyper, "f"}
-})
-```
+- In the Terminal, clone the FigmaFiles Spoon repository using the following command:
 
-**Replace `[YOUR_FIGMA_API_KEY]` with your Figma API key.**
+     ```
+     git clone git@github.com:fyrebase/FigmaFiles.spoon.git ~/.hammerspoon/Spoons/FigmaFiles.spoon
+     ```
 
-You can find out how to generate or revoke a Figma API key [here](https://help.figma.com/hc/en-us/articles/8085703771159-Manage-personal-access-tokens).
+     This command will download the necessary files into the directory you just created.
 
-**Replace `[TEAM_ID],[ANOTHER_TEAM_ID]` with a comma separated list of the team IDs you wish to be able to search.**
+### 3. **Initializing the Spoon**
 
-You can obtain the team ID from the Figma desktop app by right clicking on your team and copying the link. You want to copy the ID at the end of the URL - Example: `https://www.figma.com/files/team/[TEAM_ID]`
+- To load the Spoon, add the following to your HammerSpoon `~/.hammerspoon/init.lua` file:
+
+     ```
+     hs.loadSpoon("FigmaFiles")
+     ```
+
+### 4. **Configuring the Spoon Settings**
+
+- Now, it’s time to configure Figma Files. Add your Figma API key and the desired team IDs:
+
+     ```
+     spoon.FigmaFiles.apiKey = "[YOUR_FIGMA_API_KEY]"
+     spoon.FigmaFiles.teamIds = {[TEAM_ID],[ANOTHER_TEAM_ID]}
+     spoon.FigmaFiles.darkMode = true
+     spoon.FigmaFiles.autoUpdate = true
+     spoon.FigmaFiles.updateCacheInterval = 60*60*3 -- 3 Hours
+     ```
+
+     * Replace `[YOUR_FIGMA_API_KEY]` with your actual Figma API key.
+     * Replace `[TEAM_ID],[ANOTHER_TEAM_ID]` with the team IDs you wish to access.
+
+#### How to Obtain Your Figma API Key
+
+- Visit the Figma website and log in.
+- Navigate to your settings and look for API Key management. Here, you can generate or revoke your API key.
+- Remember to replace `[YOUR_FIGMA_API_KEY]` in the script with the key you obtain.
+
+#### Obtaining Team IDs
+
+- Open the Figma desktop app.
+- Right-click on your team and select 'Copy Link.'
+- The URL will have your team ID at the end, like `https://www.figma.com/files/team/[TEAM_ID]`.
+
+#### 5. **Activate the Figma Files Spoon**
+
+     ```
+     spoon.FigmaFiles:start()
+     ```
+
+#### 6. **Setting Up the Shortcut**
+
+- Finally, set your preferred keyboard shortcut to open the Figma file chooser:
+
+     ```
+     spoon.FigmaFiles:bindHotKeys({
+         showFigmaFilesChooser = {{ctrl, shift}, "f"}
+     })
+     ```
+
+     This example sets `ctrl + shift + f` as the shortcut. Feel free to adjust it to your preference.
+
+### Profit!
