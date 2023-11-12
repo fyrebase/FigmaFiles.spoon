@@ -5,7 +5,7 @@
 FigmaFiles Spoon for HammerSpoon is a game-changer for Mac users, especially designers and developers. This innovative tool enables you to open Figma files from anywhere in your system with just a shortcut. Say goodbye to the hassle of navigating through teams and projects. Let's dive into how you can install and set up this nifty tool to streamline your workflow.
 
 > [!IMPORTANT]
-> Figma Files is provided as is. It is currently beta, but is functioning well enough for my needs. Please report any issues you may be experiencing and I willdo my best to resolve.
+> Figma Files is provided as is. It is currently beta, but is functioning well enough for my needs. Please report any issues you may be experiencing and I will do my best to resolve.
 
 ## Installing FigmaFiles Spoon for HammerSpoon
 
